@@ -122,6 +122,25 @@ public class Database {
     }
 
 
+    public void deleteSuperhero(String name) {
+        // Find the superhero to delete based on their name
+        Superhero superheroToDelete = null;
+        for (Superhero superhero : superheroes) {
+            if (superhero.getName().equalsIgnoreCase(name)) {
+                superheroToDelete = superhero;
+                break; // Found the superhero, exit the loop
+            }
+        }
+
+        if (superheroToDelete == null) {
+            System.out.println("Superhero not found.");
+            return;
+        }
+
+        // Remove the superhero from the list
+        superheroes.remove(superheroToDelete);
+        System.out.println("Superhero deleted successfully.");
+    }
 
 
 

@@ -21,6 +21,9 @@ public class Userinterface {
                 case 1:
                     createSuperhero();
                     break;
+                case 2:
+                    deleteSuperhero();
+                    break;
                 case 5:
                     searchSuperhero();
                     break;
@@ -49,6 +52,7 @@ public class Userinterface {
     private void displayMenu() {
         System.out.println("Velkommen til SUPERHERO UNIVERSET.");
         System.out.println("1. Opret superhelt");
+        System.out.println("2. slet superhelt");
         System.out.println("5. Søg på en superhelt");
         System.out.println("6. Rediger en superhelt");
         System.out.println("7. Udskriv liste af superhelte i databasen");
@@ -148,6 +152,14 @@ public class Userinterface {
         System.out.print("Indtast navnet på superhelten, du vil redigere: ");
         String name = keyboard.next();
         database.editSuperhero(name);
+    }
+
+    private void deleteSuperhero() {
+        System.out.print("Indtast navnet på superhelten, du vil slette: ");
+        String name = keyboard.nextLine();
+        database.deleteSuperhero(name);
+
+
     }
 
 
