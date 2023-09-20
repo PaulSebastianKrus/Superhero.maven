@@ -37,4 +37,10 @@ public class DatabaseTest {
         assertEquals(isHuman, addedHero.getIsHuman());
         assertEquals(strength, addedHero.getStrength());
     }
+
+
+
+
+
+
 }
