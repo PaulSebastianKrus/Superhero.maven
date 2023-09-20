@@ -6,6 +6,11 @@ public class Database {
     private ArrayList<Superhero> superheroes = new ArrayList<>(20);
     private Scanner keyboard = new Scanner(System.in);
 
+
+    public ArrayList<Superhero> getSuperheroes() {
+        return superheroes;
+    }
+
     public Database() {
         Superhero superhero1 = new Superhero("Batman", "kanikkehuske", "flagermus", 1980, "ja", 3000);
         Superhero superhero2 = new Superhero("superman", "kanikkehuske", "super", 1980, "ja", 4000);
