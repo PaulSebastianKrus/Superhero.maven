@@ -14,7 +14,7 @@ public class Userinterface {
 
             if (choice == -1) {
                 System.out.println("Ugyldigt input. Prøv igen.");
-                continue; // Continue to the next iteration of the loop for invalid input.
+                continue;
             }
 
             switch (choice) {
