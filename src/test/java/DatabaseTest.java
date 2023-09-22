@@ -17,7 +17,7 @@ public class DatabaseTest {
 
     @Test
     public void testAddSuperhero() {
-        // Define test data
+        
         String name = "TestHero";
         String realName = "TestRealName";
         String superPower = "TestPower";
@@ -25,11 +25,11 @@ public class DatabaseTest {
         String isHuman = "yes";
         int strength = 100;
 
-        // Add a superhero to the database
+        
         database.addSuperhero(name, realName, superPower, yearCreated, isHuman, strength);
 
-        // Retrieve the superhero from the database
-        Superhero addedHero = database.getSuperheroes().get(2); // Assuming there are two predefined heroes
+        
+        Superhero addedHero = database.getSuperheroes().get(2); 
 
         // Check if the added superhero matches the test data
         assertNotNull(addedHero);
