@@ -48,12 +48,12 @@ public class Database {
     }
 
     public void editSuperhero(String name) {
-        // Find the superhero to edit based on their name
+
         Superhero superheroToEdit = null;
         for (Superhero superhero : superheroes) {
             if (superhero.getName().equalsIgnoreCase(name)) {
                 superheroToEdit = superhero;
-                break; // Found the superhero, exit the loop
+                break;
             }
         }
 
@@ -62,35 +62,35 @@ public class Database {
             return;
         }
 
-        // Print out the original information before editing
+
         System.out.println("Original superhero details:");
         System.out.println(superheroToEdit);
 
-        // Prompt the user for new values
+
         System.out.println("Editing superhero: " + superheroToEdit.getName());
 
-        // Prompt for new name
+
         System.out.print("New name (press Enter to keep original): ");
         String newName = keyboard.nextLine();
         if (!newName.isEmpty()) {
             superheroToEdit.setName(newName);
         }
 
-        // Prompt for new real name
+
         System.out.print("New real name (press Enter to keep original): ");
         String newRealName = keyboard.nextLine();
         if (!newRealName.isEmpty()) {
             superheroToEdit.setRealName(newRealName);
         }
 
-        // Prompt for new super power
+
         System.out.print("New super power (press Enter to keep original): ");
         String newSuperPower = keyboard.nextLine();
         if (!newSuperPower.isEmpty()) {
             superheroToEdit.setSuperPower(newSuperPower);
         }
 
-        // Prompt for new year created
+
         System.out.print("New year created (press Enter to keep original): ");
         String newYearCreatedStr = keyboard.nextLine();
         if (!newYearCreatedStr.isEmpty()) {
@@ -98,7 +98,7 @@ public class Database {
             superheroToEdit.setYearCreated(newYearCreated);
         }
 
-        // Prompt for new isHuman
+
         System.out.print("New is human (true/false, press Enter to keep original): ");
         String newIsHumanStr = keyboard.nextLine();
         if (!newIsHumanStr.isEmpty()) {
@@ -106,7 +106,7 @@ public class Database {
         }
 
 
-        // Prompt for new strength
+
         System.out.print("New strength (press Enter to keep original): ");
         String newStrengthStr = keyboard.nextLine();
         if (!newStrengthStr.isEmpty()) {
@@ -116,19 +116,19 @@ public class Database {
 
         System.out.println("Superhero edited successfully.");
 
-        // Print out the edited superhero
+
         System.out.println("Edited superhero details:");
         System.out.println(superheroToEdit);
     }
 
 
     public void deleteSuperhero(String name) {
-        // Find the superhero to delete based on their name
+
         Superhero superheroToDelete = null;
         for (Superhero superhero : superheroes) {
             if (superhero.getName().equalsIgnoreCase(name)) {
                 superheroToDelete = superhero;
-                break; // Found the superhero, exit the loop
+                break;
             }
         }
 
@@ -137,7 +137,7 @@ public class Database {
             return;
         }
 
-        // Remove the superhero from the list
+
         superheroes.remove(superheroToDelete);
         System.out.println("Superhero deleted successfully.");
     }

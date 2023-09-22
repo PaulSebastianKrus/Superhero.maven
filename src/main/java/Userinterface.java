@@ -63,12 +63,12 @@ public class Userinterface {
     private int getUserChoice() {
         try {
             int choice = keyboard.nextInt();
-            keyboard.nextLine(); // Consume the newline character
+            keyboard.nextLine();
             return choice;
         } catch (java.util.InputMismatchException e) {
-            // Consume the invalid input
+
             keyboard.nextLine();
-            return -1; // Return -1 to indicate an error
+            return -1;
         }
     }
 
@@ -82,13 +82,13 @@ public class Userinterface {
         System.out.print("Super power: ");
         String superPower = keyboard.nextLine();
 
-        //System.out.print("Year created: ");
+
         int yearCreated = getValidIntegerInput("Year created: ");
 
         System.out.print("Is human: ");
         String isHuman = keyboard.next();
 
-        //System.out.print("Strength: ");
+
         int strength = getValidIntegerInput("Strength: ");
 
         database.addSuperhero(name, realName, superPower, yearCreated, isHuman, strength);
@@ -98,11 +98,11 @@ public class Userinterface {
             try {
                 System.out.print(prompt);
                 int input = keyboard.nextInt();
-                keyboard.nextLine(); // Consume the newline character
+                keyboard.nextLine();
                 return input;
             } catch (java.util.InputMismatchException e) {
                 System.out.println("Ugyldig input. Indtast venligst et heltal.");
-                keyboard.nextLine(); // Consume the invalid input
+                keyboard.nextLine();
             }
         }
     }
@@ -123,13 +123,13 @@ public class Userinterface {
                 count++;
             }
 
-            // Ask the user to choose a superhero from the list
+
             System.out.print("Vælg en superhelt (1-" + (count - 1) + "): ");
             int superheroChoice = keyboard.nextInt();
             if (superheroChoice >= 1 && superheroChoice < count) {
                 Superhero selectedSuperhero = matchingSuperheroes.get(superheroChoice - 1);
                 System.out.println("Du valgte: " + selectedSuperhero.getName());
-                // You can perform additional actions with the selected superhero here.
+
                 Superhero.displaySuperheroDetails(selectedSuperhero);
 
             } else {
