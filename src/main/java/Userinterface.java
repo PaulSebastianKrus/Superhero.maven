@@ -82,7 +82,6 @@ public class Userinterface {
         System.out.print("Super power: ");
         String superPower = keyboard.nextLine();
 
-
         int yearCreated = getValidIntegerInput("Year created: ");
 
         System.out.print("Is human: ");

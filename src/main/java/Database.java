@@ -106,7 +106,6 @@ public class Database {
         }
 
 
-
         System.out.print("New strength (press Enter to keep original): ");
         String newStrengthStr = keyboard.nextLine();
         if (!newStrengthStr.isEmpty()) {
@@ -141,7 +140,6 @@ public class Database {
         superheroes.remove(superheroToDelete);
         System.out.println("Superhero deleted successfully.");
     }
-
 
 
 }

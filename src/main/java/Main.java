@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        Userinterface ui = new Userinterface();
+        Controller controller = new Controller();
+        Userinterface ui = new Userinterface(controller);
         ui.startProgram();
         ui.closeScanner();
 
