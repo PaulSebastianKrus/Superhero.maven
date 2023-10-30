@@ -2,8 +2,16 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Userinterface {
+
+    private Controller controller;
+
     private Scanner keyboard = new Scanner(System.in);
     private Database database = new Database();
+
+    public Userinterface(Controller controller) {
+        this.controller = controller;
+
+    }
 
 
 
@@ -151,6 +159,7 @@ public class Userinterface {
         System.out.print("Indtast navnet på superhelten, du vil redigere: ");
         String name = keyboard.next();
         database.editSuperhero(name);
+
     }
 
     private void deleteSuperhero() {
