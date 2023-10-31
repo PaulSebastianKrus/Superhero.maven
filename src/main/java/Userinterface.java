@@ -6,7 +6,7 @@ public class Userinterface {
     private Controller controller;
 
     private Scanner keyboard = new Scanner(System.in);
-    private Database database = new Database();
+    //private Database database = new Database();
 
     public Userinterface(Controller controller) {
         this.controller = controller;
@@ -98,7 +98,7 @@ public class Userinterface {
 
         int strength = getValidIntegerInput("Strength: ");
 
-        database.addSuperhero(name, realName, superPower, yearCreated, isHuman, strength);
+        controller.addSuperhero(name, realName, superPower, yearCreated, isHuman, strength);
     }
     private int getValidIntegerInput(String prompt) {
         while (true) {
@@ -147,7 +147,7 @@ public class Userinterface {
 
     private void printSuperheroes() {
         System.out.println("Liste af superhelte");
-        database.printSuperheroes();
+        controller.printSuperhero();
     }
 
     private void exitProgram() {
@@ -158,7 +158,7 @@ public class Userinterface {
     private void editSuperhero() {
         System.out.print("Indtast navnet på superhelten, du vil redigere: ");
         String name = keyboard.next();
-        database.editSuperhero(name);
+        controller.editSuperHero(name);
 
     }
 

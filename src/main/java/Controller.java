@@ -25,8 +25,8 @@ public class Controller {
 
     }
 
-    public void searchSuperHero(String name) {
-        database.searchSuperhero(name);
+    public ArrayList<Superhero> searchSuperHero(String name) {
+       return database.searchSuperhero(name);
     }
 
 
