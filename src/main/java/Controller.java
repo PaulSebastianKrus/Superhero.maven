@@ -17,12 +17,10 @@ public class Controller {
 
     public void addSuperhero(String name, String realName, String superPower, int yearCreated, String isHuman, int strength){
     database.addSuperhero(name,realName,superPower,yearCreated,isHuman,strength);
-
     }
 
     public void printSuperhero(){
         database.printSuperheroes();
-
     }
 
     public ArrayList<Superhero> searchSuperHero(String name) {
@@ -33,8 +31,5 @@ public class Controller {
     public ArrayList<Superhero>getsuperheroes(){
         return database.getSuperheroes();
     }
-
-
-
 
 }

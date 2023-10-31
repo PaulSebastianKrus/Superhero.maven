@@ -118,7 +118,7 @@ public class Userinterface {
     private void searchSuperhero() {
         System.out.print("Indtast søgning: ");
         String searchName = keyboard.next();
-        ArrayList<Superhero> matchingSuperheroes = database.searchSuperhero(searchName);
+        ArrayList<Superhero> matchingSuperheroes = controller.searchSuperHero(searchName);
 
         if (matchingSuperheroes.isEmpty()) {
             System.out.println("Ingen matchende superhelte fundet.");
@@ -165,7 +165,7 @@ public class Userinterface {
     private void deleteSuperhero() {
         System.out.print("Indtast navnet på superhelten, du vil slette: ");
         String name = keyboard.nextLine();
-        database.deleteSuperhero(name);
+        controller.deleteSuperHeroes(name);
 
 
     }
