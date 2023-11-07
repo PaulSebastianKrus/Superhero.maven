@@ -1,3 +1,6 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -115,7 +118,6 @@ public class Database {
 
         System.out.println("Superhero edited successfully.");
 
-
         System.out.println("Edited superhero details:");
         System.out.println(superheroToEdit);
     }
@@ -141,14 +143,21 @@ public class Database {
         System.out.println("Superhero deleted successfully.");
     }
 
+    public void saveListOfSuperheroesToFile(String fileName) {
+        try (PrintStream output = new PrintStream(new File(fileName))) {
+            for (Superhero superhero : superheroes) {
+                output.println(superhero.getName());
+                output.println(superhero.getRealName());
+                output.println(superhero.getSuperPower());
+                output.println(superhero.getYearCreated());
+                output.println(superhero.getIsHuman());
+                output.println(superhero.getStrength());
+                output.println();
+            }
+            System.out.println("Superheroes have been saved to " + fileName);
+        } catch (FileNotFoundException e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+    }
 
 }
-
-
-
-
-
-
-
-
-

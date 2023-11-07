@@ -40,6 +40,9 @@ public class Userinterface {
                 case 7:
                     printSuperheroes();
                     break;
+                case 8:
+                    saveSuperheroes();
+                    break;
                 case 9:
                     exitProgram();
                     break;
@@ -59,10 +62,11 @@ public class Userinterface {
     private void displayMenu() {
         System.out.println("Velkommen til SUPERHERO UNIVERSET.");
         System.out.println("1. Opret superhelt");
-        System.out.println("2. slet superhelt");
+        System.out.println("2. Slet superhelt");
         System.out.println("5. Søg på en superhelt");
         System.out.println("6. Rediger en superhelt");
         System.out.println("7. Udskriv liste af superhelte i databasen");
+        System.out.println("8. Gem din liste af superhelte");
         System.out.println("9. Afslut");
         System.out.print("Indtast dit valg: ");
     }
@@ -94,12 +98,12 @@ public class Userinterface {
         System.out.print("Is human: ");
         String isHuman = keyboard.next();
 
-
         int strength = getValidIntegerInput("Strength: ");
 
         controller.addSuperhero(name, realName, superPower, yearCreated, isHuman, strength);
     }
-    private int getValidIntegerInput(String prompt) {
+
+            private int getValidIntegerInput(String prompt) {
         while (true) {
             try {
                 System.out.print(prompt);
@@ -149,6 +153,7 @@ public class Userinterface {
         controller.printSuperhero();
     }
 
+
     private void exitProgram() {
         System.out.println("Afslutter programmet.");
         System.exit(0);
@@ -169,5 +174,9 @@ public class Userinterface {
 
     }
 
-
+    public void saveSuperheroes() {
+        System.out.print("Enter file name to save superheroes: ");
+        String fileName = keyboard.nextLine();
+        controller.saveSuperheroesToFile(fileName);
+    }
 }

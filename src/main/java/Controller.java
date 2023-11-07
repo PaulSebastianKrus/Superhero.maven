@@ -31,5 +31,8 @@ public class Controller {
     public ArrayList<Superhero>getsuperheroes(){
         return database.getSuperheroes();
     }
+    public void saveSuperheroesToFile(String fileName) {
+        database.saveListOfSuperheroesToFile(fileName);
+    }
 
 }
