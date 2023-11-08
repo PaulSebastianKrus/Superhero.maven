@@ -2,6 +2,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Database {
@@ -28,7 +30,9 @@ public class Database {
         superheroes.add(superhero);
     }
 
-    public void printSuperheroes() {
+    public void printAndSortSuperheroes() {
+        Collections.sort(superheroes, Comparator.comparing(Superhero::getName));
+
         for (Superhero superhero : superheroes) {
             System.out.println(superhero);
             System.out.println();
