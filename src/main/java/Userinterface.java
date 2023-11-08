@@ -150,7 +150,8 @@ public class Userinterface {
 
     private void printSuperheroes() {
         System.out.println("Liste af superhelte");
-        controller.printSuperhero();
+
+        controller.printAndSortSuperheroes();
     }
 
 
