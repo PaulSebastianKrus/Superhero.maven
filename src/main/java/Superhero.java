@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Superhero {
     private String name;
     private String realName;
@@ -63,9 +61,9 @@ public class Superhero {
         this.strength = strength;
     }
 
-
+    @Override
     public String toString() {
-        return "Name: " + name + "\nAlias: " + realName + "\nPower: " + superPower + "\nYear: " + yearCreated + "\nHuman?: " + isHuman + "\nStrength: " + strength;
+        return "Navn: " + name + "\nAlias: " + realName + "\nKraft: " + superPower + "\nÅrstal: " + yearCreated + "\nMenneske?: " + isHuman + "\nStyrke: " + strength;
     }
 
 
@@ -73,11 +71,11 @@ public class Superhero {
         System.out.println("Superhelt Information:");
         System.out.println("------------------------------");
         System.out.println("Navn: " + superhero.getName());
-        System.out.println("Real Name: " + superhero.getRealName());
-        System.out.println("Super Power: " + superhero.getSuperPower());
-        System.out.println("Year Created: " + superhero.getYearCreated());
-        System.out.println("Is Human: " + superhero.getIsHuman());
-        System.out.println("Strength: " + superhero.getStrength());
+        System.out.println("Rigtigt navn: " + superhero.getRealName());
+        System.out.println("Superkraft: " + superhero.getSuperPower());
+        System.out.println("Årstal: " + superhero.getYearCreated());
+        System.out.println("Er menneske: " + superhero.getIsHuman());
+        System.out.println("Styrke: " + superhero.getStrength());
         System.out.println("------------------------------");
     }
 

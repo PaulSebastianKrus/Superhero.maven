@@ -87,18 +87,18 @@ public class Userinterface {
         System.out.print("Navn: ");
         String name = keyboard.nextLine();
 
-        System.out.print("Real name: ");
+        System.out.print("Rigtige navn: ");
         String realName = keyboard.nextLine();
 
-        System.out.print("Super power: ");
+        System.out.print("Superkraft: ");
         String superPower = keyboard.nextLine();
 
-        int yearCreated = getValidIntegerInput("Year created: ");
+        int yearCreated = getValidIntegerInput("Årstal: ");
 
-        System.out.print("Is human: ");
+        System.out.print("Er menneske: ");
         String isHuman = keyboard.next();
 
-        int strength = getValidIntegerInput("Strength: ");
+        int strength = getValidIntegerInput("Styrke: ");
 
         controller.addSuperhero(name, realName, superPower, yearCreated, isHuman, strength);
     }
@@ -149,9 +149,42 @@ public class Userinterface {
     }
 
     private void printSuperheroes() {
-        System.out.println("Liste af superhelte");
+        System.out.println("Hvordan vil du sortere dine superhelte?:");
+        System.out.println("1. Navn");
+        System.out.println("2. Rigtige navn");
+        System.out.println("3. Superkraft");
+        System.out.println("4. Årstal");
+        System.out.println("5. Menneske");
+        System.out.println("6. Styrke");
 
-        controller.printAndSortSuperheroes();
+        int choice = getUserChoice();
+        String sortBy;
+
+        switch (choice) {
+            case 1:
+                sortBy = "navn";
+                break;
+            case 2:
+                sortBy = "rigtigt navn";
+                break;
+            case 3:
+                sortBy = "superkraft";
+                break;
+            case 4:
+                sortBy = "årstal";
+                break;
+            case 5:
+                sortBy = "er menneske";
+                break;
+            case 6:
+                sortBy = "styrke";
+                break;
+            default:
+                System.out.println("Ugyldigt valg. Standard sortering efter navn anvendes.");
+                sortBy = "navn";
+        }
+
+        controller.printAndSortSuperheroes(sortBy);
     }
 
 
@@ -176,8 +209,10 @@ public class Userinterface {
     }
 
     public void saveSuperheroes() {
-        System.out.print("Enter file name to save superheroes: ");
+        System.out.print("Indtast filnavnet for der du vil gemme dine superhelte: ");
         String fileName = keyboard.nextLine();
         controller.saveSuperheroesToFile(fileName);
     }
+
+
 }
