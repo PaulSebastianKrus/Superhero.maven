@@ -157,35 +157,36 @@ public class Userinterface {
         System.out.println("5. Menneske");
         System.out.println("6. Styrke");
 
-        int choice = getUserChoice();
-        String sortBy;
+        System.out.print("Vælg første sorterings attribut: ");
+        int firstChoice = getUserChoice();
+        String firstSortBy = getSortAttribute(firstChoice);
 
+        System.out.print("Vælg anden sorterings attribut (tryk Enter for ingen sortering): ");
+        int secondChoice = getUserChoice();
+        String secondSortBy = (secondChoice == -1) ? null : getSortAttribute(secondChoice);
+
+        controller.printAndSortSuperheroes(firstSortBy, secondSortBy);
+    }
+
+    private String getSortAttribute(int choice) {
         switch (choice) {
             case 1:
-                sortBy = "navn";
-                break;
+                return "Navn:";
             case 2:
-                sortBy = "rigtigt navn";
-                break;
+                return "Rigtigt navn:";
             case 3:
-                sortBy = "superkraft";
-                break;
+                return "Superkraft:";
             case 4:
-                sortBy = "årstal";
-                break;
+                return "Årstal:";
             case 5:
-                sortBy = "er menneske";
-                break;
+                return "Er menneske:";
             case 6:
-                sortBy = "styrke";
-                break;
+                return "Styrke:";
             default:
-                System.out.println("Ugyldigt valg. Standard sortering efter navn anvendes.");
-                sortBy = "navn";
+                return "name";
         }
-
-        controller.printAndSortSuperheroes(sortBy);
     }
+
 
 
     private void exitProgram() {

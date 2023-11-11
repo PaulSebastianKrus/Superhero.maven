@@ -40,22 +40,22 @@ public class Database {
         }
 
         switch (sortBy.toLowerCase()) {
-            case "navn":
+            case "Navn:":
                 Collections.sort(superheroes, Comparator.comparing(Superhero::getName));
                 break;
-            case "rigtigt navn":
+            case "Rigtigt navn:":
                 Collections.sort(superheroes, Comparator.comparing(Superhero::getRealName));
                 break;
-            case "superkraft":
+            case "Superkraft:":
                 Collections.sort(superheroes, Comparator.comparing(Superhero::getSuperPower));
                 break;
-            case "årstal":
+            case "Årstal:":
                 Collections.sort(superheroes, Comparator.comparingInt(Superhero::getYearCreated));
                 break;
-            case "er menneske":
+            case "Er menneske:":
                 Collections.sort(superheroes, Comparator.comparing(Superhero::getIsHuman));
                 break;
-            case "styrke":
+            case "Styrke:":
                 Collections.sort(superheroes, Comparator.comparingInt(Superhero::getStrength));
                 break;
             default:

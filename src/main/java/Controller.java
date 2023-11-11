@@ -22,7 +22,7 @@ public class Controller {
         database.saveListOfSuperheroesToFile("Hero.csv");
     }
 
-    public void printAndSortSuperheroes(String sortBy) {
+    public void printAndSortSuperheroes(String firstSortBy, String sortBy) {
         database.printAndSortSuperheroes(sortBy);
     }
 
